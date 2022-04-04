@@ -1,11 +1,12 @@
 import { useState } from "react";
+import './AddEntry.css'
 
 
 const AddEntry = (props) => {
 
     const [name, setName] = useState('')
     const [post, setPost] = useState('')
-
+  
     function handleSubmit(event) {
         event.preventDefault()
         let newEntry = {
