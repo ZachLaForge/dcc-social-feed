@@ -1,8 +1,8 @@
 import { useState } from "react";
-import './AddEntry.css'
+import './CreatePost.scss'
 
 
-const AddEntry = (props) => {
+const CreatePost = (props) => {
 
     const [user, setUser] = useState('');
     const [date, setDate] = useState("");
@@ -53,10 +53,10 @@ const AddEntry = (props) => {
         className="btn btn-primary"
         style={{ "margin-top": "1em" }}
       >
-        Add
+        Submit
       </button>
     </form>
   );
 };
 
-export default AddEntry;
+export default CreatePost;
