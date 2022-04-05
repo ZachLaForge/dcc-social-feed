@@ -4,31 +4,59 @@ import './AddEntry.css'
 
 const AddEntry = (props) => {
 
-    const [name, setName] = useState('')
-    const [post, setPost] = useState('')
-  
-    function handleSubmit(event) {
-        event.preventDefault()
-        let newEntry = {
-            name: name,
-            post: post
-        }
-        props.addNewEntry(newEntry)
-    }
+    const [user, setUser] = useState('');
+    const [date, setDate] = useState("");
+    const [body, setBody] = useState("");
 
-    return ( 
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Name</label>
-                <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
-            </div>
-            <div>
-                <label>Post</label>
-                <input type='text' value={post} onChange={(event) => setPost(event.target.value)} />
-            </div>
-            <button type="submit">Create</button>
-        </form>
-     );
-}
- 
+  function handleSubmit(event) {
+    event.preventDefault();
+    let newPost = {
+        body: body,
+      date: date,
+      user: user
+    };
+    console.log({ newPost });
+    props.setPost(newPost);
+  }
+
+  return (
+    <form className='form-row' onSubmit={handleSubmit} >
+      <div>
+        <label>What's on your mind?</label>
+        <input
+          className="form-group col-md-6"
+          type="text"
+          value={body}
+          onChange={(event) => setBody(event.target.value)}
+        ></input>
+      </div>
+      <div>
+        <label>Who is Posting?</label>
+        <input
+          className="form-group col-md-6"
+          type="text"
+          value={user}
+          onChange={(event) => setUser(event.target.value)}
+        ></input>
+      </div>
+      <div className="form-group">
+        <label>Date</label>
+        <input
+          className="form-control"
+          type="date"
+          value={date}
+          onChange={(event) => setDate(event.target.value)}
+        ></input>
+      </div>
+      <button
+        type="submit"
+        className="btn btn-primary"
+        style={{ "margin-top": "1em" }}
+      >
+        Add
+      </button>
+    </form>
+  );
+};
+
 export default AddEntry;
