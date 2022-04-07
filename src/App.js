@@ -8,9 +8,9 @@ function App() {
 
   const [posts, setPost] = useState([
     {
-      body: "Hey!!",
+      body: "Hey do you want to go out later??",
       user: "Zachary LaForge",
-      date: "2022-04-29",
+      date: "2022-04-04",
     },
   ]);
 
